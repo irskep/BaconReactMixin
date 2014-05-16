@@ -1,0 +1,33 @@
+{
+  "name": "BaconReactMixin",
+  "version": "0.1.0",
+  "description": "React mixin to set component state from Bacon.js observables",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/irskep/BaconReactMixin.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bacon.js",
+    "react.js",
+    "bacon",
+    "react",
+    "mixin"
+  ],
+  "author": "Ted Suzman & Steve Johnson",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "underscore": "~1.6.0",
+    "envify": "~1.2.1",
+    "react": "~0.10.0",
+    "baconjs": "~0.7.11"
+  },
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "react": "~0.10.0",
+    "baconjs": "~0.7.11"
+  }
+}
