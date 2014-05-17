@@ -1,5 +1,5 @@
-var Bacon = require('baconjs');
-var _ = require('underscore');
+var Bacon = window.Bacon || require('baconjs');
+var _ = window._ || require('underscore');
 
 module.exports = BaconReactMixin = function(context) {
 

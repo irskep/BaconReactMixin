@@ -1,0 +1,27 @@
+<html>
+  <head><title>BaconReactMixin demo</title></head>
+
+  <div id="content"></div>
+
+  <script src="//fb.me/react-0.10.0.min.js"></script>
+  <script
+    src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js">
+  </script>
+  <script
+    src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.10/bacon.min.js">
+  </script>
+  <script src="BaconReactMixin.js"></script>
+
+  <script>
+    var date = Bacon.fromPoll(
+      1000, function() { return new Date(); }).toProperty(new Date());
+    var DateView = React.createClass({
+      mixins: [BaconReactMixin({date: date})],
+      render: function() {
+        return React.DOM.div(null, "Date: " + this.props.date);
+      }
+    })
+
+    React.renderComponent(DateView(), document.getElementById("content"));
+  </script>
+</html>
