@@ -4,19 +4,6 @@ var _ = window._ || _dereq_('underscore');
 
 module.exports = BaconReactMixin = function(context) {
 
-  /*
-  var keysWithInitialValues = [];
-  _.each(context, function(value, key) {
-      if (value instanceof Bacon.Observable) {
-        value.take(1).onValue(function() {
-          keysWithInitialValues.push(key);
-        });
-      } else {
-        keysWithInitialValues.push(key);
-      }
-  });
-  */
-
   var values = Bacon.combineTemplate(context);
 
   var initialValues = null;
@@ -25,10 +12,21 @@ module.exports = BaconReactMixin = function(context) {
   });
 
   if (!initialValues) {
+
+    var keysWithInitialValues = [];
+    _.each(context, function(value, key) {
+        if (value instanceof Bacon.Observable) {
+          value.take(1).onValue(function() {
+            keysWithInitialValues.push(key);
+          });
+        } else {
+          keysWithInitialValues.push(key);
+        }
+    });
+
     console.warn(
       "Missing values:",
       _.difference(_.keys(context), keysWithInitialValues));
-    console.log(keysWithInitialValues);
     throw "Need initial values for all properties";
   }
 

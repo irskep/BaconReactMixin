@@ -38,14 +38,12 @@ avoid problems.
 var BaconyComponent = React.createClass({
     mixins: [BaconReactMixin({
         a: Bacon.constant('a'),
-        b: Bacon.once('b'),
-        c: 'c'
+        b: 'b'
     })],
     render: function() {
         return <div class="everything">
             {this.state.a},
-            {this.state.b},
-            {this.state.c},
+            {this.state.b}
         </div>
     }
 });

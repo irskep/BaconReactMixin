@@ -29,18 +29,18 @@
     var BaconyComponent = React.createClass({
         mixins: [BaconReactMixin({
             a: Bacon.constant('a'),
-            b: Bacon.once('b'),
-            c: 'c',
-            d: Bacon.once('d').delay(1000).toProperty(null),
-            e: Bacon.once('e').delay(1000).toProperty().startWith(null)
+            b: 'b',
+            // this won't show up due to a subscribe/unsubscribe issue
+            // (is a bug)
+            c: Bacon.once('c').delay(1000).toProperty(null),
+            d: Bacon.once('d').delay(1000).toProperty().startWith(null)
         })],
         render: function() {
             return React.DOM.div(null,
                 this.state.a, ", ",
                 this.state.b, ", ",
                 this.state.c, ", ",
-                this.state.d, ", ",
-                this.state.e
+                this.state.d
             );
         }
     });
