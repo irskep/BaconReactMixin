@@ -1,7 +1,7 @@
 # BaconReactMixin
 
-`BaconReactMixin` sets component state from (Bacon.js)[1] observables. It
-depends on (React.js)[2], (underscore.js)[3], and Bacon.js.
+`BaconReactMixin` sets component state from [Bacon.js](1) observables. It
+depends on [React.js](2), [underscore.js](3), and Bacon.js.
 
 [1]: https://github.com/baconjs/bacon.js
 [2]: https://facebook.github.io/react/
@@ -11,6 +11,9 @@ depends on (React.js)[2], (underscore.js)[3], and Bacon.js.
 
 `BaconReactMixin({key: property})` returns a mixin that sets `state[key]`
 on the component whenever `property` is updated.
+
+You can also use streams, as long as a value is delivered to the stream before
+the component is rendered.
 
 ## Example
 
