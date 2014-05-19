@@ -7,6 +7,19 @@ depends on [React.js](2), [underscore.js](3), and Bacon.js.
 [2]: https://facebook.github.io/react/
 [3]: http://underscorejs.org/
 
+## Installation
+
+`BaconReactMixin` can be installed as an npm package or with a `<script>` tag.
+
+```sh
+npm install BaconReactMixin
+```
+
+```html
+  <script src="BaconReactMixin.js"></script>
+```
+
+
 ## Usage
 
 `BaconReactMixin({key: property})` returns a mixin that sets `state[key]`
