@@ -2,6 +2,7 @@
   <head><title>BaconReactMixin demo</title></head>
 
   <div id="content"></div>
+  <div id="content2"></div>
 
   <script src="//fb.me/react-0.10.0.min.js"></script>
   <script
@@ -24,5 +25,25 @@
     })
 
     React.renderComponent(CurrentDate(), document.getElementById("content"));
+
+    var BaconyComponent = React.createClass({
+        mixins: [BaconReactMixin({
+            a: Bacon.constant('a'),
+            b: Bacon.once('b'),
+            c: 'c',
+            d: Bacon.once('d').delay(1000).toProperty(null),
+            e: Bacon.once('e').delay(1000).toProperty().startWith(null)
+        })],
+        render: function() {
+            return React.DOM.div(null,
+                this.state.a, ", ",
+                this.state.b, ", ",
+                this.state.c, ", ",
+                this.state.d, ", ",
+                this.state.e
+            );
+        }
+    });
+    React.renderComponent(BaconyComponent(), document.getElementById("content2"));
   </script>
 </html>

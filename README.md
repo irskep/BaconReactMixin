@@ -19,7 +19,6 @@ npm install BaconReactMixin
 <script src="BaconReactMixin.js"></script>
 ```
 
-
 ## Usage
 
 `BaconReactMixin({key: property})` returns a mixin that sets `state[key]`
@@ -28,10 +27,31 @@ on the component whenever `property` is updated.
 Properties must have initial values. If you want to use a property without
 an initial value, you can just use `property.startWith(undefined)`.
 
-You can also use streams, as long as a value is delivered to the stream before
-the component is rendered.
+Constants are also valid.
 
-## Example
+Streams may work sometimes but will not be reliable. Use `toProperty()` to
+avoid problems.
+
+## Small example
+
+```jsx
+var BaconyComponent = React.createClass({
+    mixins: [BaconReactMixin({
+        a: Bacon.constant('a'),
+        b: Bacon.once('b'),
+        c: 'c'
+    })],
+    render: function() {
+        return <div class="everything">
+            {this.state.a},
+            {this.state.b},
+            {this.state.c},
+        </div>
+    }
+});
+```
+
+## Complete example
 
 ```html
 <html>

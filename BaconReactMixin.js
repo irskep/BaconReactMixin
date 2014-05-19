@@ -4,6 +4,7 @@ var _ = window._ || _dereq_('underscore');
 
 module.exports = BaconReactMixin = function(context) {
 
+  /*
   var keysWithInitialValues = [];
   _.each(context, function(value, key) {
       if (value instanceof Bacon.Observable) {
@@ -14,6 +15,7 @@ module.exports = BaconReactMixin = function(context) {
         keysWithInitialValues.push(key);
       }
   });
+  */
 
   var values = Bacon.combineTemplate(context);
 
@@ -26,6 +28,7 @@ module.exports = BaconReactMixin = function(context) {
     console.warn(
       "Missing values:",
       _.difference(_.keys(context), keysWithInitialValues));
+    console.log(keysWithInitialValues);
     throw "Need initial values for all properties";
   }
 
