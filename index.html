@@ -15,13 +15,14 @@
   <script>
     var date = Bacon.fromPoll(
       1000, function() { return new Date(); }).toProperty(new Date());
-    var DateView = React.createClass({
+
+    var CurrentDate = React.createClass({
       mixins: [BaconReactMixin({date: date})],
       render: function() {
         return React.DOM.div(null, "Date: " + this.state.date);
       }
     })
 
-    React.renderComponent(DateView(), document.getElementById("content"));
+    React.renderComponent(CurrentDate(), document.getElementById("content"));
   </script>
 </html>
