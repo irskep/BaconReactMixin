@@ -16,7 +16,7 @@ npm install BaconReactMixin
 ```
 
 ```html
-  <script src="BaconReactMixin.js"></script>
+<script src="BaconReactMixin.js"></script>
 ```
 
 
