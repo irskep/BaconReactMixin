@@ -18,7 +18,7 @@ module.exports = BaconReactMixin = function(context) {
 
   var initialValues = null;
   values.take(1).onValue(function(_initialValues) {
-    var initialValues = _initialValues;
+    initialValues = _initialValues;
   });
 
   if (!initialValues) {

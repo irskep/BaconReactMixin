@@ -18,7 +18,7 @@
     var DateView = React.createClass({
       mixins: [BaconReactMixin({date: date})],
       render: function() {
-        return React.DOM.div(null, "Date: " + this.props.date);
+        return React.DOM.div(null, "Date: " + this.state.date);
       }
     })
 
