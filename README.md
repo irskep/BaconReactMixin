@@ -25,6 +25,9 @@ npm install BaconReactMixin
 `BaconReactMixin({key: property})` returns a mixin that sets `state[key]`
 on the component whenever `property` is updated.
 
+Properties must have initial values. If you want to use a property without
+an initial value, you can just use `property.startWith(undefined)`.
+
 You can also use streams, as long as a value is delivered to the stream before
 the component is rendered.
 
