@@ -32,7 +32,7 @@ module.exports = BaconReactMixin = function(context) {
   return {
     getInitialState: function() {return initialValues;},
     componentDidMount: function() {
-      this.unsubscribe = values.onValue(this.replaceState.bind(this));
+      this.unsubscribe = values.onValue(this.setState.bind(this));
     },
     componentWillUnmount: function() {
       this.unsubscribe();
