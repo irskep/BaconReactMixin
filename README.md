@@ -12,6 +12,8 @@ depends on [React.js](2), [underscore.js](3), and Bacon.js.
 `BaconReactMixin` can be installed as an npm package or with a `<script>` tag.
 
 ```sh
+# actually this doesn't work yet because we haven't published it.
+# but you can download the tarball and use it this way.
 npm install BaconReactMixin
 ```
 
